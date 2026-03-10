@@ -18,3 +18,4 @@ jobs:
           echo "Repository: ${{ github.repository }}"
           echo "Ref: ${{ github.ref }}"
           echo "SHA: ${{ github.sha }}"
+          echo "JSON Event: ${{ toJSON(github.event) }}
