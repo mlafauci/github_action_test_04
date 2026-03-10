@@ -1,0 +1,20 @@
+name: Issue Events Output
+
+on:
+  issues:
+    types: [opened, edited, closed, reopened]
+
+jobs:
+  output-context:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Output GitHub Context
+        run: |
+          echo "Event: ${{ github.event_name }}"
+          echo "Action: ${{ github.event.action }}"
+          echo "Issue Number: ${{ github.event.issue.number }}"
+          echo "Issue Title: ${{ github.event.issue.title }}"
+          echo "Issue Author: ${{ github.event.issue.user.login }}"
+          echo "Repository: ${{ github.repository }}"
+          echo "Ref: ${{ github.ref }}"
+          echo "SHA: ${{ github.sha }}"
