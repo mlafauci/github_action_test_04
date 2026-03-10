@@ -10,9 +10,9 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        node-version: [18.x, 20.x]
+    # strategy:
+    #   matrix:
+    #     node-version: [18.x, 20.x]
 
     steps:
     - name: Get Code
@@ -35,3 +35,6 @@ jobs:
     
     - name: Build project
       run: npm run build
+
+    - name: Deploy
+      run: echo "Deploying..."
